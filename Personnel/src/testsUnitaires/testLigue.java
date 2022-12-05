@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
+import metier.Client;
 import personnel.*;
 
 class testLigue 
@@ -75,14 +76,23 @@ class testLigue
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
-		ligue.remove(employe);
-		assertEquals(employe, ligue.getEmployes());
+		employe.remove();
+		assertEquals(0, ligue.getEmployes().size());
 	}
 	
 	@Test
 	void TestCompareTo() throws SauvegardeImpossible
 	{
-		
+		Ligue flechettes = gestionPersonnel.addLigue("Basketball");
+		Ligue basketball = gestionPersonnel.addLigue("Basketball");
+		assertEquals(0, basketball.compareTo(flechettes));
+	}
+	
+	@Test
+	void TestToString() throws SauvegardeImpossible
+	{
+		Ligue basketball = gestionPersonnel.addLigue("Basketball");
+		assertEquals("Basketball", basketball.toString());
 	}
 	
 	
