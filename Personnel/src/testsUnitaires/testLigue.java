@@ -72,9 +72,8 @@ class testLigue
 	void TestRemove() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
-		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
-		employe.remove();
-		assertEquals(0, ligue.getEmployes().size());
+		ligue.remove();
+		assertFalse(gestionPersonnel.getLigues().contains(ligue));
 	}
 	
 	@Test
