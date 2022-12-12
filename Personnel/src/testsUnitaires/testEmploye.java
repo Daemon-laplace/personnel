@@ -12,21 +12,21 @@ class testEmploye
 	GestionPersonnel gestionPersonnel = GestionPersonnel.getGestionPersonnel();
 	
 	@Test
-	void getDateArrivee() throws SauvegardeImpossible
+	void TestgetDateArrivee() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
 		assertEquals(LocalDate.now(), employe.getDateArrivee());
 	}
 	@Test
-	void getDateDepart() throws SauvegardeImpossible
+	void TestgetDateDepart() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty", LocalDate.of(2022, 12, 20));
 		assertEquals(LocalDate.of(2022, 12, 20), employe.getDateDepart());
 	}
 	@Test
-	void setDateDepart() throws SauvegardeImpossible
+	void TestsetDateDepart() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty", LocalDate.of(2022, 12, 20));
@@ -35,7 +35,7 @@ class testEmploye
 	}
 	
 	@Test
-	void estAdmin() throws SauvegardeImpossible
+	void TestestAdmin() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
@@ -50,14 +50,14 @@ class testEmploye
 //		assertTrue(employe.estRoot());
 //	}
 	@Test
-	void getNom() throws SauvegardeImpossible
+	void TestgetNom() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
 		assertEquals("Bouchard", employe.getNom());
 	}
 	@Test
-	void setNom() throws SauvegardeImpossible
+	void TestsetNom() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
@@ -65,14 +65,14 @@ class testEmploye
 		assertEquals("Soucher", employe.getNom());
 	}
 	@Test
-	void getPrenom() throws SauvegardeImpossible
+	void TestgetPrenom() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
 		assertEquals("Gérard", employe.getPrenom());
 	}
 	@Test
-	void setPrenom() throws SauvegardeImpossible
+	void TestsetPrenom() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
@@ -80,14 +80,14 @@ class testEmploye
 		assertEquals("Martin", employe.getPrenom());
 	}
 	@Test
-	void getMail() throws SauvegardeImpossible
+	void TestgetMail() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
 		assertEquals("g.bouchard@gmail.com", employe.getMail());
 	}
 	@Test
-	void setMail() throws SauvegardeImpossible
+	void TestsetMail() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
@@ -95,14 +95,14 @@ class testEmploye
 		assertEquals("m.soucher@gmail.com", employe.getMail());
 	}
 	@Test
-	void checkPassword() throws SauvegardeImpossible
+	void TestcheckPassword() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
 		assertTrue(employe.checkPassword("azerty"));
 	}
 	@Test
-	void setPassword() throws SauvegardeImpossible
+	void TestsetPassword() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
@@ -110,7 +110,7 @@ class testEmploye
 		assertTrue(employe.checkPassword("qwerty"));
 	}
 	@Test
-	void getLigue()throws SauvegardeImpossible
+	void TestgetLigue()throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		Employe employe = ligue.addEmploye("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
@@ -126,7 +126,7 @@ class testEmploye
 //		assertNotEquals(employe, ligue.getEmployes());
 //	}
 	@Test
-	void compareTo() throws SauvegardeImpossible
+	void TestcompareTo() throws SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Bowling");
 		Employe employe = ligue.addEmploye ("Bouchard", "Gérard", "g.bouchard@gmail.com", "azerty");
