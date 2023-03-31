@@ -67,6 +67,15 @@ public class Employe implements Serializable, Comparable<Employe>
 	 * @param ligue la ligue pour laquelle on souhaite vérifier si this 
 	 * est l'admininstrateur.
 	 */
+	public void setDateDepart(String dateDepart)
+	{
+		this.dateDepart = LocalDate.parse(dateDepart);
+	}
+	
+	public void setDateArrivee(String dateArrivee)
+	{
+		this.dateArrivee = LocalDate.parse(dateArrivee);
+	}
 	
 	public boolean estAdmin(Ligue ligue)
 	{
